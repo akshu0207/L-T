@@ -1,0 +1,33 @@
+pipeline {
+    agent { 
+        node {
+            label 'jenkins-agent-goes-here'
+            }
+      }
+    stages {
+        stage('Build') {
+            steps {
+                echo "Building.."
+                sh '''
+                echo "build is success"
+                '''
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Testing.."
+                sh '''
+                echo "test is successful"
+                '''
+            }
+        }
+        stage('Deliver') {
+            steps {
+                echo 'Deliver....'
+                sh '''
+                echo "delivery is done"
+                '''
+            }
+        }
+    }
+}
